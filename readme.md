@@ -5,8 +5,8 @@ This app allows you to create any number of to do lists, create items within the
 
 Prototype:
 
-![](/var/folders/tt/29s3290j2yn87vttc1c437_c0000gn/T/DMD82CE8222-F166-432C-8F60-122BAD519AED/Main_storyboard_—_Edited.png)
+![]()
 
 Home Screen (with some lists added):
 
-![](/var/folders/tt/29s3290j2yn87vttc1c437_c0000gn/T/DMD098DF3E4-10D8-4423-89AB-EF3CC8935975/Glass_and_iPhone_6_–_iOS_10_1__14B72_.png)
+![]()
