@@ -5,8 +5,8 @@ This app allows you to create any number of to do lists, create items within the
 
 Prototype:
 
-![](https://github.com/moskowizzle/Project-1/blob/master/Main_storyboard_%E2%80%94_Edited.png?raw=true)
+![](https://github.com/moskowizzle/Project-1/blob/master/Main_storyboard.png?raw=true)
 
 Home Screen (with some lists added):
 
-![](https://github.com/moskowizzle/Project-1/blob/master/Glass_and_iPhone_6_%E2%80%93_iOS_10_1__14B72_.png?raw=true)
+![](https://github.com/moskowizzle/Project-1/blob/master/Glass.png?raw=true)
