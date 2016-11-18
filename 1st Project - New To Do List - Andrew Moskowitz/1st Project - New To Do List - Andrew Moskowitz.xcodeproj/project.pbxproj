@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BABDE2F31DDE546200FA86DC /* how-to-texture-walls.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BABDE2F21DDE546200FA86DC /* how-to-texture-walls.jpg */; };
 		BAD36EC01DDBD8AB00FBBCB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD36EBF1DDBD8AB00FBBCB7 /* AppDelegate.swift */; };
 		BAD36EC71DDBD8AB00FBBCB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD36EC61DDBD8AB00FBBCB7 /* Assets.xcassets */; };
 		BAD36ECA1DDBD8AB00FBBCB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD36EC81DDBD8AB00FBBCB7 /* LaunchScreen.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BABDE2F21DDE546200FA86DC /* how-to-texture-walls.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "how-to-texture-walls.jpg"; path = "../../../../../../../../Projects/Project 1/Images/how-to-texture-walls.jpg"; sourceTree = "<group>"; };
 		BAD36EBC1DDBD8AB00FBBCB7 /* 1st Project - New To Do List - Andrew Moskowitz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "1st Project - New To Do List - Andrew Moskowitz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD36EBF1DDBD8AB00FBBCB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAD36EC61DDBD8AB00FBBCB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,7 +69,6 @@
 				BAD36ED41DDBD8CA00FBBCB7 /* Logic */,
 				BAD36ED31DDBD8C200FBBCB7 /* Data */,
 				BAD36ED21DDBD8B800FBBCB7 /* Images */,
-				BAD36EC61DDBD8AB00FBBCB7 /* Assets.xcassets */,
 				BAD36ED11DDBD8B300FBBCB7 /* UI */,
 				BAD36ECB1DDBD8AB00FBBCB7 /* Info.plist */,
 			);
@@ -86,6 +87,8 @@
 		BAD36ED21DDBD8B800FBBCB7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BAD36EC61DDBD8AB00FBBCB7 /* Assets.xcassets */,
+				BABDE2F21DDE546200FA86DC /* how-to-texture-walls.jpg */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -104,9 +107,9 @@
 				BAD36EBF1DDBD8AB00FBBCB7 /* AppDelegate.swift */,
 				BAD36ED51DDBD9FB00FBBCB7 /* ListViewController.swift */,
 				BAD36ED71DDBDA1000FBBCB7 /* ItemViewController.swift */,
+				BAD36EDF1DDCB29600FBBCB7 /* DetailViewController.swift */,
 				BAD36EDB1DDBDAAA00FBBCB7 /* ListTableViewCell.swift */,
 				BAD36EDD1DDBDAE200FBBCB7 /* ItemTableViewCell.swift */,
-				BAD36EDF1DDCB29600FBBCB7 /* DetailViewController.swift */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				BAD36EE21DDCB84B00FBBCB7 /* Main.storyboard in Resources */,
 				BAD36ECA1DDBD8AB00FBBCB7 /* LaunchScreen.storyboard in Resources */,
 				BAD36EC71DDBD8AB00FBBCB7 /* Assets.xcassets in Resources */,
+				BABDE2F31DDE546200FA86DC /* how-to-texture-walls.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +348,7 @@
 				BAD36ED01DDBD8AB00FBBCB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

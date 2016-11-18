@@ -20,13 +20,21 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var selectedCellIndex: Int?
    
     @IBAction func addItemButton(_ sender: UIButton) {
-        let newItem = Item(itemName: itemNameTextField.text!, itemDescription: itemDescTextField.text!)
         
-        lists[selectedIndex!].items.append(newItem)
-        itemDescTextField.text = ""
-        itemNameTextField.text = ""
-        
-        itemListTableView.reloadData()
+        if itemNameTextField.text == "" {
+            itemNameTextField.placeholder = "Please enter an item"
+            itemDescTextField.placeholder = ""
+        } else {
+            
+            let newItem = Item(itemName: itemNameTextField.text!, itemDescription: itemDescTextField.text!)
+            
+            lists[selectedIndex!].items.append(newItem)
+            itemDescTextField.text = ""
+            itemNameTextField.text = ""
+            itemNameTextField.placeholder = "Add Item"
+            
+            itemListTableView.reloadData()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,7 +43,6 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemTableViewCell
-        
         cell.itemNameLabel.text = lists[selectedIndex!].items[indexPath.row].itemName
         return cell
     }
@@ -57,13 +64,30 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
 
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete
+        {
+            lists[selectedIndex!].items.remove(at: indexPath.row)
+            itemListTableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-itemNameLabel.text = lists[selectedIndex!].toDoListName
+        itemNameLabel.text = lists[selectedIndex!].toDoListName
+        let tap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
+        tap.numberOfTapsRequired = 2
+        view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
     }
-
+    
+    func doubleTapped() {
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -71,7 +95,7 @@ itemNameLabel.text = lists[selectedIndex!].toDoListName
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let listOfItemsViewController = segue.destination as! DetailViewController
-        listOfItemsViewController.selectedIndex = itemListTableView.indexPathForSelectedRow?.row
+        listOfItemsViewController.selectedIndex = selectedIndex
         listOfItemsViewController.selectedItemIndex = itemListTableView.indexPathForSelectedRow?.row
     }
 

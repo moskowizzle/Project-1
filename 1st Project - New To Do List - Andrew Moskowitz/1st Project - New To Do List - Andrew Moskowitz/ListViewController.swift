@@ -15,14 +15,18 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func addListButton(_ sender: UIButton) {
     
+        if listNameTextField.text == "" {
+            listNameTextField.placeholder = "Please enter a list name"
+        } else {
+        
         let listTitle = List(toDoListName: listNameTextField.text!)
         
         lists.append(listTitle)
-        
+        listNameTextField.placeholder = "Please enter a list name"
         listNameTextField.text = ""
         
         listTableView.reloadData()
-        
+        }
     }
     
     var selectedCell: ListTableViewCell?
@@ -59,10 +63,21 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
 
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete
+        {
+            
+        lists.remove(at: indexPath.row)
+        listTableView.reloadData()
+    }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 

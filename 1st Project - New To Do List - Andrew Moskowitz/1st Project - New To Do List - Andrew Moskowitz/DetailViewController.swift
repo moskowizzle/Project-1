@@ -4,35 +4,42 @@
 //
 //  Created by Andrew Moskowitz on 11/16/16.
 //  Copyright © 2016 Andrew Moskowitz. All rights reserved.
-//
+//  Just adding this line as a test
+// Another one
 
 import UIKit
 
 class DetailViewController: UIViewController {
-
-    @IBOutlet weak var itemNameLabel: UILabel!
+    
+   // @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var detailTextView: UITextView!
     
+    @IBOutlet weak var itemNameTextField: UITextField!
     var selectedIndex: Int?
     var selectedItemIndex: Int?
     
-    @IBAction func saveButton(_ sender: UIButton) {
-         lists[selectedIndex!].items[selectedItemIndex!].itemName = itemNameLabel.text!
-         lists[selectedItemIndex!].items[selectedItemIndex!].itemDescription = detailTextView.text!
-    }
+    var item: Item!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        itemNameLabel.text = lists[selectedIndex!].items[selectedItemIndex!].itemName
-        detailTextView.text = lists[selectedItemIndex!].items[selectedItemIndex!].itemDescription
+        
+        item = lists[selectedIndex!].items[selectedItemIndex!]
+        
+        itemNameTextField.text = item.itemName
+        detailTextView.text = item.itemDescription
+        
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        item.itemName = itemNameTextField.text!
+        item.itemDescription = detailTextView.text!
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation
